@@ -6,7 +6,7 @@
 /*   By: rmartins <rmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 20:55:16 by rmartins          #+#    #+#             */
-/*   Updated: 2021/06/09 14:07:30 by rmartins         ###   ########.fr       */
+/*   Updated: 2021/06/12 22:51:49 by rmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 # define MINITALK_H
 
 # include <stdio.h>
-# include <sys/types.h>
+// # include <sys/types.h>
 # include <unistd.h>
+# include <signal.h>
+// # include <asm-generic/siginfo.h>
+// # include <asm-generic/signal.h>
 
 int		ft_putchar(int c);
 void	ft_putnbr(int n);
