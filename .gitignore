@@ -8,5 +8,5 @@
 
 # Executables
 *.out
-client
-server
+/client
+/server
