@@ -6,7 +6,7 @@
 #    By: rmartins <rmartins@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/13 16:35:42 by rmartins          #+#    #+#              #
-#    Updated: 2021/06/16 10:15:43 by rmartins         ###   ########.fr        #
+#    Updated: 2021/06/16 20:10:22 by rmartins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,13 +27,15 @@ HEADER = ft_ansi.h \
 SRC_SERVER = server/server.c
 
 SRC_CLIENT = client/client.c \
-			client/arg_management.c
+			client/arg_management.c \
+			client/wait_for_ack.c
 
 SRC_COMMON = common/ft_putchar.c \
 	common/ft_putnbr.c \
 	common/ft_putstr.c \
 	common/ft_atoi.c \
-	common/wait_for_ack.c
+	common/ft_memset.c
+	
 
 all: $(NAME_SERVER) $(NAME_CLIENT)
 

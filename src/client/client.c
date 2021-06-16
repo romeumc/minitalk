@@ -6,7 +6,7 @@
 /*   By: rmartins <rmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 06:41:26 by rmartins          #+#    #+#             */
-/*   Updated: 2021/06/16 11:43:40 by rmartins         ###   ########.fr       */
+/*   Updated: 2021/06/16 20:11:09 by rmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ int g_acknowledge_client;
 void	handler(int signum, siginfo_t *info, void *ucontext)
 {
 	g_acknowledge_client = 1;
-	ft_putstr("message sent:");
-	ft_putnbr(signum);
-	ft_putstr("\n");
+	// ft_putstr("message sent:");
+	// ft_putnbr(signum);
+	// ft_putstr("\n");
 	(void)signum;
 	(void)info;
 	(void)ucontext;
@@ -63,12 +63,14 @@ void	send_character(char character, int server_pid)
 		
 		kill(server_pid, signal);
 		wait_for_ack(g_acknowledge_client);
+		// printf("ALI server:%d signal:%d\n", server_pid, signal);
 		g_acknowledge_client = 0;
 		i--;
 	}
-	ft_putstr("**** char sent:");
-	ft_putchar(character);
-	ft_putstr("\n");
+	//ft_putstr("**** char sent:");
+	//ft_putchar(character);
+	//ft_putnbr(character);
+	//ft_putstr("\n");
 }
 
 int	main(int argc, char **argv)
@@ -77,7 +79,7 @@ int	main(int argc, char **argv)
 	int		i;
 	int		server_pid;
 
-	printf("I'm here ROMEU!!!  My pid is %d.\n", (int)getpid());
+	//printf("I'm here ROMEU!!!  My pid is %d.\n", (int)getpid());
 	g_acknowledge_client = 0;
 	act.sa_flags = SA_SIGINFO;
 	act.sa_sigaction = &handler;
@@ -90,6 +92,7 @@ int	main(int argc, char **argv)
 	g_acknowledge_client = 0;
 	while (argv[2][i] != '\0')
 	{
+		// printf("aqui\n");
 		send_character(argv[2][i], server_pid);
 		i++;
 	}
@@ -100,7 +103,7 @@ int	main(int argc, char **argv)
 	// 	;
 
 	/* Now continue execution. */
-	puts("That's all, folks!\n");
+	ft_putstr("Message Sent\n");
 
 	return 0;
 }

@@ -1,0 +1,551 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Wed Jun 16 20:10:57 2021
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+WSLENV = ELECTRON_RUN_AS_NODE/w:WT_SESSION::WT_PROFILE_ID
+# default
+.SHELLFLAGS := -c
+# environment
+VSCODE_AGENT_FOLDER = /home/rmartins/.vscode-server
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /home/rmartins/minitalk/romeu.minitalk
+# makefile
+SHELL = /bin/sh
+# makefile (from 'Makefile', line 19)
+OBJ_SERVER = $(SRC_SERVER:%.c=$(OBJ_DIR)/%.o)
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
+# environment
+_ = /mnt/c/Users/romeu/AppData/Local/Programs/Microsoft VS Code/bin/code
+# makefile (from 'Makefile', line 16)
+CFLAGS = -Wall -Wextra -Werror -g
+# makefile (from 'Makefile', line 20)
+OBJ_COMMON = $(SRC_COMMON:%.c=$(OBJ_DIR)/%.o)
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# 'override' directive
+GNUMAKEFLAGS := 
+# makefile (from 'Makefile', line 17)
+OBJ_DIR = obj
+# makefile (from 'Makefile', line 76)
+ANSI_B_BGREEN = "\033[42;1m"
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_CWD = /mnt/c/Users/romeu/AppData/Local/Programs/Microsoft VS Code
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/rmartins/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Microsoft SQL Server/130/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Users/romeu/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/romeu/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/romeu/.dotnet/tools
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# makefile (from 'Makefile', line 29)
+SRC_CLIENT = client/client.c client/arg_management.c client/wait_for_ack.c
+# makefile (from 'Makefile', line 13)
+NAME_SERVER = server
+# makefile (from 'Makefile', line 74)
+ANSI_RESET = "\033[0m"
+# environment
+VSCODE_LOG_STACK = false
+# environment
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-418a2b09-827e-4a8b-965e-d8af21f3e787.sock
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+# automatic
+%F = $(notdir $%)
+# makefile (from 'Makefile', line 77)
+ANSI_F_BRED = "\033[31;1m"
+# environment
+DISPLAY = 192.168.16.1:0.0
+# makefile (from 'Makefile', line 78)
+ANSI_F_BBLACK = "\033[30;1m"
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /home/rmartins/minitalk/romeu.minitalk
+# default
+.LOADED := 
+# environment
+WSL_INTEROP = /run/WSL/146_interop
+# environment
+WT_SESSION = 5112f963-b2ae-43db-8292-4824fa2e760b
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/server/remoteExtensionHostProcess
+# environment
+HOME = /home/rmartins
+# environment
+LOGNAME = rmartins
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+ZSH = /home/rmartins/.oh-my-zsh
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
+# makefile (from 'Makefile', line 75)
+ANSI_B_RED = "\033[41m"
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 1
+# environment
+POSH_THEME = /home/rmartins/.poshthemes/romeu.omp.json
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = rmartins
+# makefile
+.DEFAULT_GOAL := all
+# environment
+NAME = Code
+# makefile (from 'Makefile', line 21)
+OBJ_CLIENT = $(SRC_CLIENT:%.c=$(OBJ_DIR)/%.o)
+# environment
+LESS = -R
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/romeu/.vscode/extensions/ms-vscode-remote.remote-wsl-0.56.4
+# default
+MAKE_COMMAND := make
+# environment
+OLDPWD = /mnt/c/Users/romeu/AppData/Local/Programs/Microsoft VS Code
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# makefile (from 'Makefile', line 27)
+SRC_SERVER = server/server.c
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# makefile (from 'Makefile', line 33)
+SRC_COMMON = common/ft_putchar.c common/ft_putnbr.c common/ft_putstr.c common/ft_atoi.c common/ft_memset.c
+# environment
+WT_PROFILE_ID = {07b52e3e-de2c-5db4-bd2d-ba144ed6c273}
+# default
+MAKEFILES := 
+# makefile (from 'Makefile', line 18)
+SRC_DIR = src
+# automatic
+<F = $(notdir $<)
+# environment
+PAGER = less
+# environment
+LC_ALL = C
+# makefile (from 'Makefile', line 23)
+HEADER = ft_ansi.h minitalk.h client.h
+# environment
+HOSTTYPE = x86_64
+# makefile (from 'Makefile', line 14)
+NAME_CLIENT = client
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+VSCODE_INJECT_NODE_MODULE_LOOKUP_PATH = /home/rmartins/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/remote/node_modules
+# default
+.RECIPEPREFIX := 
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+VSCODE_EXTHOST_WILL_SEND_SOCKET = true
+# environment
+WSL_DISTRO_NAME = Ubuntu-20.04
+# variable set hash-table stats:
+# Load=91/1024=9%, Rehash=0, Collisions=5/135=4%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# src/server (device 2096, inode 79369): 1 files, no impossibilities so far.
+# . (device 2096, inode 77071): 14 files, no impossibilities.
+# src/common (device 2096, inode 108303): 5 files, no impossibilities so far.
+# src/client (device 2096, inode 79360): 3 files, no impossibilities so far.
+# src (device 2096, inode 79352): No files, no impossibilities so far.
+# inc (device 2096, inode 81382): 5 files, no impossibilities so far.
+
+# 28 files, no impossibilities in 6 directories.
+
+# Implicit Rules
+
+obj/%.o: src/%.c inc/ft_ansi.h inc/minitalk.h inc/client.h
+#  recipe to execute (from 'Makefile', line 53):
+	@echo $(ANSI_B_BGREEN) "compile objects" $(ANSI_RESET)$(ANSI_F_BBLACK)
+	mkdir -p $(dir $@)
+	gcc $(CFLAGS) -Iinc -c $< -o $@
+	@echo $(ANSI_RESET)
+
+# 1 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+obj/common/ft_putstr.o: src/common/ft_putstr.c inc/ft_ansi.h inc/minitalk.h inc/client.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'common/ft_putstr'
+#  Last modified 2021-06-16 20:09:31.0328179
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 53):
+	@echo $(ANSI_B_BGREEN) "compile objects" $(ANSI_RESET)$(ANSI_F_BBLACK)
+	mkdir -p $(dir $@)
+	gcc $(CFLAGS) -Iinc -c $< -o $@
+	@echo $(ANSI_RESET)
+
+obj/common/ft_putchar.o: src/common/ft_putchar.c inc/ft_ansi.h inc/minitalk.h inc/client.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'common/ft_putchar'
+#  Last modified 2021-06-16 20:09:30.9328179
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 53):
+	@echo $(ANSI_B_BGREEN) "compile objects" $(ANSI_RESET)$(ANSI_F_BBLACK)
+	mkdir -p $(dir $@)
+	gcc $(CFLAGS) -Iinc -c $< -o $@
+	@echo $(ANSI_RESET)
+
+all: server client
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+
+client: obj/client/client.o obj/client/arg_management.o obj/client/wait_for_ack.o obj/common/ft_putchar.o obj/common/ft_putnbr.o obj/common/ft_putstr.o obj/common/ft_atoi.o obj/common/ft_memset.o
+#  Implicit rule search has not been done.
+#  Last modified 2021-06-16 20:10:28.4328179
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 48):
+	@echo $(ANSI_B_BGREEN) "compile executables" $(ANSI_RESET)$(ANSI_F_BBLACK)
+	gcc $(CFLAGS) $(OBJ_CLIENT) $(OBJ_COMMON) -o $(NAME_CLIENT)
+	@echo $(ANSI_RESET) ""
+
+# Not a target:
+src/common/ft_memset.c:
+#  Implicit rule search has been done.
+#  Last modified 2021-06-16 19:37:44.8628179
+#  File has been updated.
+#  Successfully updated.
+
+.PHONY: all clean fclean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+ 
+#  File has not been updated.
+
+# Not a target:
+inc/minitalk.h:
+#  Implicit rule search has been done.
+#  Last modified 2021-06-16 20:09:15.9128179
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/common/ft_putstr.c:
+#  Implicit rule search has been done.
+#  Last modified 2021-06-08 21:44:35.53
+#  File has been updated.
+#  Successfully updated.
+
+obj/client/client.o: src/client/client.c inc/ft_ansi.h inc/minitalk.h inc/client.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'client/client'
+#  Last modified 2021-06-16 20:09:31.2728179
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 53):
+	@echo $(ANSI_B_BGREEN) "compile objects" $(ANSI_RESET)$(ANSI_F_BBLACK)
+	mkdir -p $(dir $@)
+	gcc $(CFLAGS) -Iinc -c $< -o $@
+	@echo $(ANSI_RESET)
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2021-06-16 20:10:22.5028179
+#  File has been updated.
+#  Successfully updated.
+
+server: obj/server/server.o obj/common/ft_putchar.o obj/common/ft_putnbr.o obj/common/ft_putstr.o obj/common/ft_atoi.o obj/common/ft_memset.o
+#  Implicit rule search has not been done.
+#  Last modified 2021-06-16 20:09:31.2328179
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 43):
+	@echo $(ANSI_B_BGREEN) "compile executables" $(ANSI_RESET)$(ANSI_F_BBLACK)
+	gcc $(CFLAGS) $(OBJ_SERVER) $(OBJ_COMMON) -o $(NAME_SERVER)
+	@echo $(ANSI_RESET) ""
+
+# Not a target:
+src/common/ft_putchar.c:
+#  Implicit rule search has been done.
+#  Last modified 2021-06-08 21:09:21.15
+#  File has been updated.
+#  Successfully updated.
+
+obj/client/wait_for_ack.o: src/client/wait_for_ack.c inc/ft_ansi.h inc/minitalk.h inc/client.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'client/wait_for_ack'
+#  Last modified 2021-06-16 20:10:28.3428179
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 53):
+	@echo $(ANSI_B_BGREEN) "compile objects" $(ANSI_RESET)$(ANSI_F_BBLACK)
+	mkdir -p $(dir $@)
+	gcc $(CFLAGS) -Iinc -c $< -o $@
+	@echo $(ANSI_RESET)
+
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 64):
+	@echo $(ANSI_B_RED) "fclean" $(ANSI_RESET)$(ANSI_F_BRED)
+	rm -f $(NAME_SERVER)
+	rm -f $(NAME_CLIENT)
+	@echo $(ANSI_RESET) ""
+
+lib:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 82):
+	$(MAKE) -C libft
+
+obj/client/arg_management.o: src/client/arg_management.c inc/ft_ansi.h inc/minitalk.h inc/client.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'client/arg_management'
+#  Last modified 2021-06-16 20:09:31.3128179
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 53):
+	@echo $(ANSI_B_BGREEN) "compile objects" $(ANSI_RESET)$(ANSI_F_BBLACK)
+	mkdir -p $(dir $@)
+	gcc $(CFLAGS) -Iinc -c $< -o $@
+	@echo $(ANSI_RESET)
+
+# Not a target:
+src/client/client.c:
+#  Implicit rule search has been done.
+#  Last modified 2021-06-16 20:06:15.1128179
+#  File has been updated.
+#  Successfully updated.
+
+runs: all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 101):
+	@echo $(ANSI_B_RED) "Running with sanitize" $(ANSI_RESET)
+	gcc $(CFLAGS) -fsanitize=address $(OBJ_SERVER) $(OBJ_COMMON) $(LIBFT) -o server_s
+	./server_s
+
+# Not a target:
+inc/ft_ansi.h:
+#  Implicit rule search has been done.
+#  Last modified 2021-06-08 19:49:44.98
+#  File has been updated.
+#  Successfully updated.
+
+norm:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 85):
+	@echo $(ANSI_B_RED) "norminette v3" $(ANSI_RESET)
+	@norminette $(addprefix inc/,$(HEADER)) \
+		$(addprefix src/,$(SRC_SERVER)) \
+		$(addprefix src/,$(SRC_COMMON)) \
+		$(addprefix src/,$(SRC_CLIENT))
+
+runv: all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 96):
+	@echo $(ANSI_B_RED) "Valgrind RESULT" $(ANSI_RESET)
+	#valgrind -q --leak-check=full --track-origins=yes --show-leak-kinds=all ./$(NAME_SERVER)
+	valgrind --leak-check=full --show-leak-kinds=all -s ./$(NAME_SERVER)
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/common/ft_atoi.o: src/common/ft_atoi.c inc/ft_ansi.h inc/minitalk.h inc/client.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'common/ft_atoi'
+#  Last modified 2021-06-16 20:09:31.0628179
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 53):
+	@echo $(ANSI_B_BGREEN) "compile objects" $(ANSI_RESET)$(ANSI_F_BBLACK)
+	mkdir -p $(dir $@)
+	gcc $(CFLAGS) -Iinc -c $< -o $@
+	@echo $(ANSI_RESET)
+
+re: fclean all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/server/server.o: src/server/server.c inc/ft_ansi.h inc/minitalk.h inc/client.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'server/server'
+#  Last modified 2021-06-16 20:09:30.9028179
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 53):
+	@echo $(ANSI_B_BGREEN) "compile objects" $(ANSI_RESET)$(ANSI_F_BBLACK)
+	mkdir -p $(dir $@)
+	gcc $(CFLAGS) -Iinc -c $< -o $@
+	@echo $(ANSI_RESET)
+
+run: all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 92):
+	@echo $(ANSI_B_RED) "Running for debbuger without sanitize" $(ANSI_RESET)
+	./$(NAME_SERVER)
+
+obj/common/ft_putnbr.o: src/common/ft_putnbr.c inc/ft_ansi.h inc/minitalk.h inc/client.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'common/ft_putnbr'
+#  Last modified 2021-06-16 20:09:30.9928179
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 53):
+	@echo $(ANSI_B_BGREEN) "compile objects" $(ANSI_RESET)$(ANSI_F_BBLACK)
+	mkdir -p $(dir $@)
+	gcc $(CFLAGS) -Iinc -c $< -o $@
+	@echo $(ANSI_RESET)
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 59):
+	@echo $(ANSI_B_RED) "clean" $(ANSI_RESET)$(ANSI_F_BRED)
+	rm -rf $(OBJ_DIR)
+	@echo $(ANSI_RESET) ""
+
+# Not a target:
+src/client/wait_for_ack.c:
+#  Implicit rule search has been done.
+#  Last modified 2021-06-16 20:09:58.868
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/client/arg_management.c:
+#  Implicit rule search has been done.
+#  Last modified 2021-06-16 20:06:32.3728179
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+inc/client.h:
+#  Implicit rule search has been done.
+#  Last modified 2021-06-16 20:09:21.4928179
+#  File has been updated.
+#  Successfully updated.
+
+obj/common/ft_memset.o: src/common/ft_memset.c inc/ft_ansi.h inc/minitalk.h inc/client.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'common/ft_memset'
+#  Last modified 2021-06-16 20:09:31.1028179
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 53):
+	@echo $(ANSI_B_BGREEN) "compile objects" $(ANSI_RESET)$(ANSI_F_BBLACK)
+	mkdir -p $(dir $@)
+	gcc $(CFLAGS) -Iinc -c $< -o $@
+	@echo $(ANSI_RESET)
+
+# Not a target:
+src/common/ft_atoi.c:
+#  Implicit rule search has been done.
+#  Last modified 2021-06-09 14:05:34.7780439
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/server/server.c:
+#  Implicit rule search has been done.
+#  Last modified 2021-06-16 19:49:49.8228179
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/common/ft_putnbr.c:
+#  Implicit rule search has been done.
+#  Last modified 2021-06-08 21:13:40.99
+#  File has been updated.
+#  Successfully updated.
+
+# files hash-table stats:
+# Load=36/1024=4%, Rehash=0, Collisions=18/155=12%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 76 / storage = 998 B / avg = 13 B
+# current buf: size = 8162 B / used = 998 B / count = 76 / avg = 13 B
+
+# strcache performance: lookups = 177 / hit rate = 57%
+# hash-table stats:
+# Load=76/8192=1%, Rehash=0, Collisions=2/177=1%
+# Finished Make data base on Wed Jun 16 20:10:57 2021
+
+ 

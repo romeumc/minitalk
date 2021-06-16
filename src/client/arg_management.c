@@ -6,7 +6,7 @@
 /*   By: rmartins <rmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 10:11:35 by rmartins          #+#    #+#             */
-/*   Updated: 2021/06/16 10:19:11 by rmartins         ###   ########.fr       */
+/*   Updated: 2021/06/16 20:06:32 by rmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	validate_server(char *pid)
 		exit(EXIT_FAILURE);
 	}
 	wait_for_ack(g_acknowledge_client);
-	ft_putstr("server set\n");
 	g_acknowledge_client = 0;
+	//ft_putstr("server set\n");
 	return (server_pid);
 }

@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.h                                           :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmartins <rmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/16 10:16:50 by rmartins          #+#    #+#             */
-/*   Updated: 2021/06/16 18:06:10 by rmartins         ###   ########.fr       */
+/*   Created: 2021/01/10 00:53:22 by rmartins          #+#    #+#             */
+/*   Updated: 2021/06/16 19:37:44 by rmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERVER_H
-# define SERVER_H
-
 #include "minitalk.h"
 
-extern int	g_signal;
+void	*ft_memset(void *s, int c, size_t n)
+{
+	size_t			i;
+	unsigned char	*temp;
 
-typedef struct	s_server
+	i = 0;
+	temp = (unsigned char *)s;
+	while (i < n)
 	{
-	int		client_pid;
-	char	bin[7];
-	char	*buffer;
-	int		idx_buf;
-	int		index;
-	}	t_server;
-
-#endif
+		temp[i] = c;
+		i++;
+	}
+	return (temp);
+}
