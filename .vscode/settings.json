@@ -1,7 +1,0 @@
-{
-	"files.associations": {
-		"limits.h": "c",
-		"minitalk.h": "c",
-		"sigaction.h": "c"
-	}
-}

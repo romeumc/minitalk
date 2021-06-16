@@ -6,7 +6,7 @@
 #    By: rmartins <rmartins@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/13 16:35:42 by rmartins          #+#    #+#              #
-#    Updated: 2021/06/09 14:05:48 by rmartins         ###   ########.fr        #
+#    Updated: 2021/06/16 10:15:43 by rmartins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,16 +21,19 @@ OBJ_COMMON = $(SRC_COMMON:%.c=$(OBJ_DIR)/%.o)
 OBJ_CLIENT = $(SRC_CLIENT:%.c=$(OBJ_DIR)/%.o)
 
 HEADER = ft_ansi.h \
-	minitalk.h
+	minitalk.h \
+	client.h
 
-SRC_SERVER = server/main.c
+SRC_SERVER = server/server.c
+
+SRC_CLIENT = client/client.c \
+			client/arg_management.c
 
 SRC_COMMON = common/ft_putchar.c \
 	common/ft_putnbr.c \
 	common/ft_putstr.c \
-	common/ft_atoi.c
-
-SRC_CLIENT = client/main.c
+	common/ft_atoi.c \
+	common/wait_for_ack.c
 
 all: $(NAME_SERVER) $(NAME_CLIENT)
 
@@ -78,7 +81,6 @@ lib:
 
 norm:
 	@echo $(ANSI_B_RED) "norminette v3" $(ANSI_RESET)
-	$(MAKE) norm -C libft
 	@norminette $(addprefix inc/,$(HEADER)) \
 		$(addprefix src/,$(SRC_SERVER)) \
 		$(addprefix src/,$(SRC_COMMON)) \
