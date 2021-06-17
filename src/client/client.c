@@ -6,7 +6,7 @@
 /*   By: rmartins <rmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 06:41:26 by rmartins          #+#    #+#             */
-/*   Updated: 2021/06/16 21:01:19 by rmartins         ###   ########.fr       */
+/*   Updated: 2021/06/17 11:32:45 by rmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,11 @@ void	send_character(char character, int server_pid)
 		g_acknowledge_client = 0;
 		i--;
 	}
-	//ft_putstr("**** char sent:");
-	//ft_putchar(character);
-	//ft_putnbr(character);
-	//ft_putstr("\n");
+	ft_putstr("**** char sent:[");
+	ft_putchar(character);
+	ft_putstr("] decimal:");
+	ft_putnbr(character);
+	ft_putstr("\n");
 }
 
 int	main(int argc, char **argv)
@@ -79,7 +80,7 @@ int	main(int argc, char **argv)
 	int		i;
 	int		server_pid;
 
-	//printf("I'm here ROMEU!!!  My pid is %d.\n", (int)getpid());
+	printf("I'm here ROMEU!!!  My pid is %d.\n", (int)getpid());
 	g_acknowledge_client = 0;
 	act.sa_flags = SA_SIGINFO;
 	act.sa_sigaction = &handler;
