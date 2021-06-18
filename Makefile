@@ -6,7 +6,7 @@
 #    By: rmartins <rmartins@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/13 16:35:42 by rmartins          #+#    #+#              #
-#    Updated: 2021/06/18 12:48:36 by rmartins         ###   ########.fr        #
+#    Updated: 2021/06/18 15:28:17 by rmartins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,26 +33,25 @@ SRC_CLIENT = client/client.c \
 SRC_COMMON = common/ft_putchar.c \
 	common/ft_putnbr.c \
 	common/ft_putstr.c \
-	common/ft_atoi.c
+	common/ft_atoi.c \
+	common/print_error_message.c
 	
 
 all: $(NAME_SERVER) $(NAME_CLIENT)
 
 $(NAME_SERVER): $(OBJ_SERVER) $(OBJ_COMMON)
-	@echo $(ANSI_B_BGREEN) "compile executables" $(ANSI_RESET)$(ANSI_F_BBLACK)
+	@echo $(ANSI_B_BGREEN) "compile executable: server" $(ANSI_RESET)$(ANSI_F_BBLACK)
 	gcc $(CFLAGS) $(OBJ_SERVER) $(OBJ_COMMON) -o $(NAME_SERVER)
 	@echo $(ANSI_RESET) ""
 
 $(NAME_CLIENT): $(OBJ_CLIENT) $(OBJ_COMMON)
-	@echo $(ANSI_B_BGREEN) "compile executables" $(ANSI_RESET)$(ANSI_F_BBLACK)
+	@echo $(ANSI_B_BGREEN) "compile executable: client" $(ANSI_RESET)$(ANSI_F_BBLACK)
 	gcc $(CFLAGS) $(OBJ_CLIENT) $(OBJ_COMMON) -o $(NAME_CLIENT)
 	@echo $(ANSI_RESET) ""
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(addprefix inc/,$(HEADER))
-	@echo $(ANSI_B_BGREEN) "compile objects" $(ANSI_RESET)$(ANSI_F_BBLACK)
 	mkdir -p $(dir $@)
 	gcc $(CFLAGS) -Iinc -c $< -o $@
-	@echo $(ANSI_RESET)
 
 clean:
 	@echo $(ANSI_B_RED) "clean" $(ANSI_RESET)$(ANSI_F_BRED)

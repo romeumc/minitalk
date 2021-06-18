@@ -6,7 +6,7 @@
 /*   By: rmartins <rmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 20:55:16 by rmartins          #+#    #+#             */
-/*   Updated: 2021/06/16 20:09:15 by rmartins         ###   ########.fr       */
+/*   Updated: 2021/06/18 15:29:59 by rmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@
 
 # define EOT (4)
 
-
+void	print_error_and_exit(char *error_message);
+void	print_message(char *header, char *message);
 
 int		ft_putchar(int c);
 void	ft_putnbr(int n);

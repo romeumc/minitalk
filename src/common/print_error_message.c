@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup_join_bonus.c                             :+:      :+:    :+:   */
+/*   print_error_message.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmartins <rmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/10 13:06:33 by rmartins          #+#    #+#             */
-/*   Updated: 2021/02/12 10:52:27 by rmartins         ###   ########.fr       */
+/*   Created: 2021/06/18 15:26:45 by rmartins          #+#    #+#             */
+/*   Updated: 2021/06/18 15:34:47 by rmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "minitalk.h"
 
-char	*ft_strdup_join(char *s, char c)
+void	print_error_and_exit(char *error_message)
 {
-	int		i;
-	char	*temp;
+	ft_putstr(ANSI_F_BRED);
+	ft_putstr("ERROR: ");
+	ft_putstr(ANSI_RESET);
+	ft_putstr(error_message);
+	ft_putstr("\n");
+	exit(EXIT_FAILURE);
+}
 
-	i = 0;
-	temp = malloc(sizeof(char) * (ft_strlen(s) + 2));
-	if (temp == NULL)
-		return (NULL);
-	while (s[i] != '\0')
-	{
-		temp[i] = s[i];
-		i++;
-	}
-	temp[i++] = c;
-	temp[i] = '\0';
-	free(s);
-	return (temp);
+void	print_message(char *header, char *message)
+{
+	ft_putstr(header);
+	ft_putstr(ANSI_F_BGREEN);
+	ft_putstr(message);
+	ft_putstr(ANSI_RESET);
+	ft_putstr("\n");
 }
