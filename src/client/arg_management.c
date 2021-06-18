@@ -6,7 +6,7 @@
 /*   By: rmartins <rmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 10:11:35 by rmartins          #+#    #+#             */
-/*   Updated: 2021/06/16 20:06:32 by rmartins         ###   ########.fr       */
+/*   Updated: 2021/06/18 14:54:41 by rmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@ void	print_error(char *error_message)
 	ft_putstr("ERROR: ");
 	ft_putstr(ANSI_RESET);
 	ft_putstr(error_message);
+	ft_putstr("\n");
+}
+
+void	print_message(char *message)
+{
+	ft_putstr(ANSI_F_BGREEN);
+	ft_putstr(message);
+	ft_putstr(ANSI_RESET);
 	ft_putstr("\n");
 }
 
@@ -45,8 +53,8 @@ int	validate_server(char *pid)
 		print_error("No server listening");
 		exit(EXIT_FAILURE);
 	}
-	wait_for_ack(g_acknowledge_client);
-	g_acknowledge_client = 0;
-	//ft_putstr("server set\n");
+	wait_for_ack(server_pid, SIGUSR1);
+	g_acknowledge = 0;
+	print_message("Server Connection: OK");
 	return (server_pid);
 }

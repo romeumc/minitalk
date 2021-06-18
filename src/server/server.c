@@ -6,7 +6,7 @@
 /*   By: rmartins <rmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 19:41:16 by rmartins          #+#    #+#             */
-/*   Updated: 2021/06/16 20:15:54 by rmartins         ###   ########.fr       */
+/*   Updated: 2021/06/18 14:26:12 by rmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,10 +85,15 @@ int	main(void)
 			if (g_signal > 0)
 			{
 				data.client_pid = g_signal;
-				kill(data.client_pid, SIGUSR1);
+				if (kill(data.client_pid, SIGUSR1) == -1)
+				{
+					ft_putstr("Could not establish connection with client");
+					exit(EXIT_FAILURE);
+				}
 				//printf(ANSI_B_CYAN" signal:%d client_pid:%d "ANSI_RESET"\n", g_signal, data.client_pid);
 			}
-			//sleep(1);
+			// ft_putchar('-');
+			// sleep(1);
 		}
 		//g_signal = 0;
 		//********************************************************
@@ -105,22 +110,29 @@ int	main(void)
 				if (current_char != EOT)
 					ft_putchar(current_char);
 			}
+			
+			if (kill(data.client_pid, g_signal) == -1)
+			{
+				// printf("client_pid:%d signal:%d\n", data.client_pid, g_signal);
+				ft_putstr("Connection Lost");
+				exit(EXIT_FAILURE);
+			}
 		}
-		kill(data.client_pid, g_signal);
 		if (current_char == EOT)
 		{
-			//printf("***********AQUI***************\n");
+			// printf("***********AQUI***************\n");
 			data.client_pid = 0;
 			g_signal = -1;
 			current_char = 0;
+			ft_putchar('\n');
 			// ft_memset(data.bin, 0, 8);
 		}
 		else
 			g_signal = 0;
 		
-		sleep(1);
+		usleep(1000);
 		//printf("***current:%d\n", current_signal);
-		//ft_putchar('.');
+		// ft_putchar('.');
 		//wait_for_ack(g_signal);
 		
 		//sleep(2);

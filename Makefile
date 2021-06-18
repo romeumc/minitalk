@@ -6,7 +6,7 @@
 #    By: rmartins <rmartins@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/13 16:35:42 by rmartins          #+#    #+#              #
-#    Updated: 2021/06/16 20:10:22 by rmartins         ###   ########.fr        #
+#    Updated: 2021/06/18 12:48:36 by rmartins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,7 @@ SRC_CLIENT = client/client.c \
 SRC_COMMON = common/ft_putchar.c \
 	common/ft_putnbr.c \
 	common/ft_putstr.c \
-	common/ft_atoi.c \
-	common/ft_memset.c
+	common/ft_atoi.c
 	
 
 all: $(NAME_SERVER) $(NAME_CLIENT)
