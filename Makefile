@@ -6,7 +6,7 @@
 #    By: rmartins <rmartins@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/13 16:35:42 by rmartins          #+#    #+#              #
-#    Updated: 2021/06/18 15:28:17 by rmartins         ###   ########.fr        #
+#    Updated: 2021/06/19 18:44:48 by rmartins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ HEADER = ft_ansi.h \
 	minitalk.h \
 	client.h
 
-SRC_SERVER = server/server.c
+SRC_SERVER = server/server.c \
+			server/server_utils.c
 
 SRC_CLIENT = client/client.c \
 			client/arg_management.c \

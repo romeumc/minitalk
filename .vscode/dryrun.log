@@ -1,16 +1,12 @@
 make --dry-run --keep-going --print-directory
-make: Entering directory '/home/rmartins/minitalk/romeu.minitalk'
-mkdir -p obj/common/
-gcc -Wall -Wextra -Werror -g -Iinc -c src/common/print_error_message.c -o obj/common/print_error_message.o
+make: Entering directory `/Users/rmartins/minitalk/romeu.minitalk'
+mkdir -p obj/server/
+gcc -Wall -Wextra -Werror -g -Iinc -c src/server/server.c -o obj/server/server.o
+mkdir -p obj/server/
+gcc -Wall -Wextra -Werror -g -Iinc -c src/server/server_utils.c -o obj/server/server_utils.o
 echo "\033[42;1m" "compile executable: server" "\033[0m""\033[30;1m"
-gcc -Wall -Wextra -Werror -g obj/server/server.o obj/common/ft_putchar.o obj/common/ft_putnbr.o obj/common/ft_putstr.o obj/common/ft_atoi.o obj/common/print_error_message.o -o server
+gcc -Wall -Wextra -Werror -g obj/server/server.o obj/server/server_utils.o obj/common/ft_putchar.o obj/common/ft_putnbr.o obj/common/ft_putstr.o obj/common/ft_atoi.o obj/common/print_error_message.o -o server
 echo "\033[0m" ""
-mkdir -p obj/client/
-gcc -Wall -Wextra -Werror -g -Iinc -c src/client/arg_management.c -o obj/client/arg_management.o
-mkdir -p obj/client/
-gcc -Wall -Wextra -Werror -g -Iinc -c src/client/wait_for_ack.c -o obj/client/wait_for_ack.o
-echo "\033[42;1m" "compile executable: client" "\033[0m""\033[30;1m"
-gcc -Wall -Wextra -Werror -g obj/client/client.o obj/client/arg_management.o obj/client/wait_for_ack.o obj/common/ft_putchar.o obj/common/ft_putnbr.o obj/common/ft_putstr.o obj/common/ft_atoi.o obj/common/print_error_message.o -o client
-echo "\033[0m" ""
-make: Leaving directory '/home/rmartins/minitalk/romeu.minitalk'
+ 
+make: Leaving directory `/Users/rmartins/minitalk/romeu.minitalk'
  

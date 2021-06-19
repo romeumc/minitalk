@@ -6,7 +6,7 @@
 /*   By: rmartins <rmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 19:41:16 by rmartins          #+#    #+#             */
-/*   Updated: 2021/06/18 15:55:17 by rmartins         ###   ########.fr       */
+/*   Updated: 2021/06/19 18:47:54 by rmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,7 @@
 
 int	g_signal;
 
-void	handler(int signum, siginfo_t *info, void *ucontext)
-{
-	if (g_signal == -1)
-		g_signal = info->si_pid;
-	else
-		g_signal = signum;
-	(void)ucontext;
-}
-
-char	get_signal_data(int signal, int *index)
+char	get_signal_data(int signal, t_server *data)
 {
 	char	bit;
 
@@ -31,7 +22,7 @@ char	get_signal_data(int signal, int *index)
 		bit = '0';
 	else
 		bit = '1';
-	*index += 1;
+	data->index++;
 	return (bit);
 }
 
@@ -53,11 +44,18 @@ char	get_character(t_server *data)
 	return (character);
 }
 
-void	display_server_pid(void)
+void	process_signal(t_server *data, char *current_char)
 {
-	ft_putstr("Server ready - pid:");
-	ft_putnbr(getpid());
-	ft_putchar('\n');
+	data->i = data->index;
+	data->bin[data->i] = get_signal_data(g_signal, data);
+	if (data->index == 8)
+	{
+		*current_char = get_character(data);
+		if (*current_char != EOT)
+			ft_putchar(*current_char);
+	}
+	if (kill(data->client_pid, g_signal) == -1)
+		print_error_and_exit("Connection to client Lost");
 }
 
 int	main(void)
@@ -67,41 +65,13 @@ int	main(void)
 	struct sigaction	act;
 
 	display_server_pid();
-	g_signal = -1;
-	act.sa_flags = SA_SIGINFO;
-	act.sa_sigaction = &handler;
-	sigaction(SIGUSR1, &act, NULL);
-	sigaction(SIGUSR2, &act, NULL);
-
-	data.index = 0;
-	data.client_pid = 0;
+	init_data(&data, &act);
 	while (1)
 	{
-		//******************************** SET PID ***************
-		while (data.client_pid == 0)
-		{
-			if (g_signal > 0)
-			{
-				data.client_pid = g_signal;
-				if (kill(data.client_pid, SIGUSR1) == -1)
-				{
-					print_error_and_exit("Could not establish connection with client");
-				}
-			}
-		}
-		//********************************************************
-		
+		set_client_pid(&data);
 		if (g_signal == SIGUSR1 || g_signal == SIGUSR2)
 		{
-			data.bin[data.index] = get_signal_data(g_signal, &data.index);
-			if (data.index == 8)
-			{
-				current_char = get_character(&data);
-				if (current_char != EOT)
-					ft_putchar(current_char);
-			}
-			if (kill(data.client_pid, g_signal) == -1)
-				print_error_and_exit("Connection to client Lost");
+			process_signal(&data, &current_char);
 		}
 		if (current_char == EOT)
 		{

@@ -6,7 +6,7 @@
 /*   By: rmartins <rmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 06:41:26 by rmartins          #+#    #+#             */
-/*   Updated: 2021/06/18 15:38:45 by rmartins         ###   ########.fr       */
+/*   Updated: 2021/06/19 18:11:30 by rmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int	main(int argc, char **argv)
 	validate_args(argc, argv);
 	server_pid = validate_server(argv[1]);
 	g_acknowledge = 0;
+	i = 0;
 	while (argv[2][i] != '\0')
 	{
 		send_character(argv[2][i], server_pid);
