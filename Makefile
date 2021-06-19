@@ -6,7 +6,7 @@
 #    By: rmartins <rmartins@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/13 16:35:42 by rmartins          #+#    #+#              #
-#    Updated: 2021/06/19 18:44:48 by rmartins         ###   ########.fr        #
+#    Updated: 2021/06/19 18:49:14 by rmartins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ OBJ_CLIENT = $(SRC_CLIENT:%.c=$(OBJ_DIR)/%.o)
 
 HEADER = ft_ansi.h \
 	minitalk.h \
-	client.h
+	client.h \
+	server.h
 
 SRC_SERVER = server/server.c \
 			server/server_utils.c

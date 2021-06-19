@@ -6,14 +6,13 @@
 /*   By: rmartins <rmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 20:55:16 by rmartins          #+#    #+#             */
-/*   Updated: 2021/06/18 15:29:59 by rmartins         ###   ########.fr       */
+/*   Updated: 2021/06/19 18:51:19 by rmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINITALK_H
 # define MINITALK_H
 
-# include <stdio.h>
 # include <unistd.h>
 # include <signal.h>
 # include <stdlib.h>
