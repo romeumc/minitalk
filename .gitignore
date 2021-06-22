@@ -1,5 +1,7 @@
 .DS?Store
-.vscode
+
+### VisualStudioCode ###
+.vscode/*
 
 # Objects
 *.o
